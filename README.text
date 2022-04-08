@@ -1,0 +1,25 @@
+BookingController
+- It is good that a repository is used to process the business logic but what
+would be better is to move some of the functions that are only helpers for the controller.
+- It is also good to note that the functions has PHP doc
+- The controller should only manage the REST interface to the business logic.
+- Better to return data in a json string format so a response->json() should be used instead.
+- For function that has one liners and variables only used once, we can return the whole line
+right away, like: return response($this->repository->with('translatorJobRel.user')->find($id));
+- For strings, we can create constant variables for it instead.
+- Using try catch is good too.
+- There should be consistency when it comes to adding comments
+
+BookingRepository
+- Remove unused code or commented out code.
+- Need to use variables that can be easily understood or it should be descriptive.
+- We can use === rather than == for stricter comparison.
+- We should be consistent so if we use Carbon to format dates we should use it throughout.
+- We can use shorter notations for ternary comparison.
+- using for curl should be avoided, we can us Guzzle for that.
+- Eloquent should be used over DB queries to prevent attacks.
+
+
+
+
+
